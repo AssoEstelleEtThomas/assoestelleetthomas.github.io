@@ -92,6 +92,15 @@
   animation: hero-pop 0.8s ease-out 0.3s both;
 }
 
+.hero-animate-fade {
+  animation: hero-fade 0.8s ease-out 0.3s both;
+}
+
+@keyframes hero-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 /* ========================================
    SCROLL REVEAL
    ======================================== */
@@ -121,3 +130,4 @@
 .stagger-children.visible > *:nth-child(2) { transition-delay: 120ms; opacity: 1; transform: translateY(0); }
 .stagger-children.visible > *:nth-child(3) { transition-delay: 240ms; opacity: 1; transform: translateY(0); }
 .stagger-children.visible > *:nth-child(4) { transition-delay: 360ms; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(5) { transition-delay: 480ms; opacity: 1; transform: translateY(0); }

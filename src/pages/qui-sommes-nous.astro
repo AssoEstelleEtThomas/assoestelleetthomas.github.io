@@ -7,7 +7,10 @@ import ScrollReveal from "../components/ScrollReveal.astro";
 import { User } from "@lucide/astro";
 ---
 
-<BaseLayout title="Qui sommes-nous" description="Découvrez l'équipe de l'Association Estelle & Thomas, engagée contre le harcèlement scolaire.">
+<BaseLayout
+  title="Qui sommes-nous"
+  description="Découvrez l'équipe de l'Association Estelle & Thomas, engagée contre le harcèlement scolaire."
+>
   <PageHero
     title="Qui sommes-nous"
     subtitle="Une équipe engagée contre le harcèlement scolaire"
@@ -17,17 +20,32 @@ import { User } from "@lucide/astro";
   <section class="bg-background py-24">
     <div class="max-w-[1200px] mx-auto px-5">
       <div class="flex flex-col lg:flex-row items-center gap-12 reveal">
-        <div class="w-64 h-64 rounded-card bg-secondary/20 flex items-center justify-center shrink-0">
+        <div
+          class="w-64 h-64 rounded-card bg-secondary/20 flex items-center justify-center shrink-0"
+        >
           <User class="w-20 h-20 text-primary/30" />
         </div>
         <div>
-          <h2 class="font-display font-black text-3xl text-primary mb-2">Estelle Masson</h2>
-          <p class="text-accent font-display font-semibold mb-6">Présidente de l'association</p>
+          <h2 class="font-display font-black text-3xl text-primary mb-2">
+            Estelle Masson
+          </h2>
+          <p class="text-accent font-display font-semibold mb-6">
+            Présidente de l'association
+          </p>
           <p class="text-text leading-relaxed mb-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Je suis Estelle, jeune femme dynamique et positive. J'ai été
+            harcelée pendant 15 ans à cause de mon poids et mon style
+            vestimentaire.
           </p>
           <p class="text-text leading-relaxed">
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            D'abord victime, j'ai décidé de mettre mon expérience passée avec
+            laquelle je suis en paix au service des autres. J'ai depuis toujours
+            voulu faire de cet épisode difficile un moyen d'aider d'autres
+            personnes.
+          </p>
+          <p class="text-text leading-relaxed mt-4">
+            Assez parlé de moi, l'association Estelle et Thomas c'est aussi 3
+            bénévoles...
           </p>
         </div>
       </div>

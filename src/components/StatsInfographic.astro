@@ -1,0 +1,419 @@
+---
+import { Users, Smartphone, Brain, TrendingUp, School } from "@lucide/astro";
+---
+
+<section class="bg-background py-24 overflow-hidden">
+  <div class="max-w-[1200px] mx-auto px-5">
+    <h2 class="font-display font-black text-4xl text-primary mb-4 text-center reveal">
+      Le harcèlement scolaire en chiffres
+    </h2>
+    <p class="text-text/60 text-center mb-20 max-w-[600px] mx-auto reveal">
+      Des chiffres alarmants qui montrent l'urgence d'agir ensemble.
+    </p>
+
+    <div class="stats-infographic reveal">
+      <!-- Row 1: Hero stat + two side stats -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-6">
+
+        <!-- Main stat: 35% with ring -->
+        <div class="lg:col-span-5 stat-ring-card group">
+          <div class="stat-ring-container">
+            <svg viewBox="0 0 120 120" class="stat-ring" aria-hidden="true">
+              <circle cx="60" cy="60" r="52" fill="none" stroke="var(--color-secondary-light)" stroke-width="10" />
+              <circle
+                cx="60" cy="60" r="52"
+                fill="none"
+                stroke="var(--color-accent)"
+                stroke-width="10"
+                stroke-linecap="round"
+                stroke-dasharray="326.73"
+                stroke-dashoffset="326.73"
+                class="ring-progress"
+                data-target="212.37"
+                transform="rotate(-90 60 60)"
+              />
+            </svg>
+            <div class="stat-ring-value">
+              <span class="font-display font-black text-4xl md:text-5xl text-accent counter" data-target="35">0</span>
+              <span class="font-display font-black text-2xl text-accent">%</span>
+            </div>
+          </div>
+          <div class="mt-6 text-center">
+            <p class="font-display font-bold text-lg text-primary mb-1">1 jeune sur 3 touché</p>
+            <p class="text-text/70 text-sm leading-relaxed">Des jeunes de 6 à 18 ans déclarent avoir subi une forme de harcèlement au cours de leur scolarité.</p>
+            <p class="text-text/40 text-xs mt-3 font-semibold tracking-wide uppercase">Étude Apel, 2025</p>
+          </div>
+        </div>
+
+        <!-- Side column -->
+        <div class="lg:col-span-7 flex flex-col gap-6">
+
+          <!-- 700 000 enfants -->
+          <div class="stat-banner-card">
+            <div class="stat-banner-icon bg-secondary/15">
+              <Users class="w-7 h-7 text-primary" />
+            </div>
+            <div class="flex-1">
+              <div class="flex items-baseline gap-2 mb-1">
+                <span class="font-display font-black text-4xl text-primary counter" data-target="700000" data-separator=" ">0</span>
+                <span class="font-display font-bold text-sm text-primary/60">enfants / an</span>
+              </div>
+              <p class="text-text/70 text-sm">touchés par le harcèlement scolaire chaque année en France.</p>
+            </div>
+            <div class="stat-banner-dots" aria-hidden="true">
+              {Array.from({ length: 35 }).map(() => (
+                <span class="dot dot-active" />
+              ))}
+              {Array.from({ length: 65 }).map(() => (
+                <span class="dot" />
+              ))}
+            </div>
+          </div>
+
+          <!-- Cyberharcèlement 23% -->
+          <div class="stat-bar-card">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="stat-banner-icon bg-accent/15">
+                <Smartphone class="w-7 h-7 text-accent" />
+              </div>
+              <div class="flex-1">
+                <div class="flex items-baseline gap-3 mb-1">
+                  <span class="font-display font-black text-3xl text-accent counter" data-target="23">0</span>
+                  <span class="font-display font-black text-lg text-accent">%</span>
+                  <span class="inline-flex items-center gap-1 bg-accent/10 text-accent text-xs font-bold px-2 py-0.5 rounded-pill">
+                    <TrendingUp class="w-3 h-3" />
+                    +5 pts
+                  </span>
+                </div>
+                <p class="text-text/70 text-sm">des enfants confrontés au cyberharcèlement, en forte hausse sur un an.</p>
+              </div>
+            </div>
+            <div class="stat-bar-track">
+              <div class="stat-bar-fill" data-width="23"></div>
+              <div class="stat-bar-prev" data-width="18"></div>
+            </div>
+            <div class="flex justify-between text-xs text-text/40 mt-1.5 font-semibold">
+              <span>2023–24 : 18 %</span>
+              <span>2024–25 : 23 %</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Row 2: Two bottom cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- 1+ élève par classe -->
+        <div class="stat-detail-card">
+          <div class="flex items-center gap-4 mb-5">
+            <div class="stat-banner-icon bg-primary/10">
+              <School class="w-7 h-7 text-primary" />
+            </div>
+            <div>
+              <div class="flex items-baseline gap-1">
+                <span class="font-display font-black text-3xl text-primary">+1</span>
+                <span class="font-display font-bold text-sm text-primary/60">élève / classe</span>
+              </div>
+              <p class="text-text/50 text-xs font-semibold uppercase tracking-wide">du CE2 à la Terminale</p>
+            </div>
+          </div>
+          <p class="text-text/70 text-sm leading-relaxed mb-4">
+            En moyenne, plus d'un élève par classe est victime de harcèlement scolaire, du CE2 à la Terminale.
+          </p>
+          <div class="text-right">
+            <span class="text-xs text-text/40 font-semibold">ici.fr, 2025</span>
+          </div>
+        </div>
+
+        <!-- 29% pensées suicidaires -->
+        <div class="stat-detail-card stat-detail-card--alert">
+          <div class="flex items-center gap-4 mb-5">
+            <div class="stat-banner-icon bg-accent/15">
+              <Brain class="w-7 h-7 text-accent" />
+            </div>
+            <div>
+              <div class="flex items-baseline gap-1">
+                <span class="font-display font-black text-3xl text-accent counter" data-target="29">0</span>
+                <span class="font-display font-black text-lg text-accent">%</span>
+              </div>
+              <p class="text-text/50 text-xs font-semibold uppercase tracking-wide">pensées suicidaires</p>
+            </div>
+          </div>
+          <p class="text-text/70 text-sm leading-relaxed mb-4">
+            Des victimes déclarent avoir eu des pensées suicidaires. Chez les filles, la détresse est encore plus marquée.
+          </p>
+          <div class="stat-severity-bar" aria-hidden="true">
+            <div class="stat-severity-fill" data-width="29"></div>
+          </div>
+          <div class="flex justify-between text-xs text-text/40 mt-1.5">
+            <span>Impact sur la santé mentale</span>
+            <span>Données santé publique, 2026</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* ---- Ring Card ---- */
+  .stat-ring-card {
+    background: white;
+    border-radius: var(--radius-card);
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stat-ring-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-secondary));
+  }
+
+  .stat-ring-container {
+    position: relative;
+    width: 180px;
+    height: 180px;
+  }
+
+  .stat-ring {
+    width: 100%;
+    height: 100%;
+  }
+
+  .ring-progress {
+    transition: stroke-dashoffset 1.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .stat-ring-value {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ---- Banner Card (700k) ---- */
+  .stat-banner-card {
+    background: white;
+    border-radius: var(--radius-card);
+    padding: 1.75rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stat-banner-icon {
+    width: 3.25rem;
+    height: 3.25rem;
+    border-radius: 0.875rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .stat-banner-dots {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 3px;
+    width: 90px;
+    flex-shrink: 0;
+  }
+
+  .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-secondary-light);
+  }
+
+  .dot-active {
+    background: var(--color-accent);
+  }
+
+  /* ---- Bar Card (23%) ---- */
+  .stat-bar-card {
+    background: white;
+    border-radius: var(--radius-card);
+    padding: 1.75rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stat-bar-track {
+    width: 100%;
+    height: 12px;
+    background: var(--color-background);
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stat-bar-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--color-accent), #e07840);
+    border-radius: 6px;
+    transition: width 1.4s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+  }
+
+  .stat-bar-prev {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background: var(--color-accent);
+    opacity: 0.25;
+    border-radius: 6px;
+    transition: width 1s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
+  }
+
+  /* ---- Detail Cards ---- */
+  .stat-detail-card {
+    background: white;
+    border-radius: var(--radius-card);
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stat-detail-card::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--color-secondary);
+  }
+
+  .stat-detail-card--alert::after {
+    background: linear-gradient(90deg, var(--color-accent), #d4694a);
+  }
+
+  .stat-block {
+    flex: 1;
+    height: 8px;
+    border-radius: 4px;
+    background: var(--color-background);
+    transition: background 0.4s ease;
+  }
+
+  .stat-block.active {
+    background: var(--color-primary);
+  }
+
+
+  /* ---- Severity Bar ---- */
+  .stat-severity-bar {
+    width: 100%;
+    height: 8px;
+    background: var(--color-background);
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stat-severity-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--color-accent), #c0513a);
+    border-radius: 4px;
+    transition: width 1.4s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+  }
+
+  /* ---- Responsive ---- */
+  @media (max-width: 640px) {
+    .stat-banner-dots {
+      display: none;
+    }
+
+    .stat-ring-container {
+      width: 150px;
+      height: 150px;
+    }
+  }
+</style>
+
+<script>
+  function animateCounters(container: Element) {
+    container.querySelectorAll<HTMLElement>(".counter").forEach((el) => {
+      const target = parseInt(el.dataset.target || "0", 10);
+      const separator = el.dataset.separator || "";
+      const duration = 1400;
+      const start = performance.now();
+
+      function update(now: number) {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = Math.round(eased * target);
+
+        if (separator && current >= 1000) {
+          el.textContent = current.toLocaleString("fr-FR");
+        } else {
+          el.textContent = String(current);
+        }
+
+        if (progress < 1) {
+          requestAnimationFrame(update);
+        }
+      }
+
+      requestAnimationFrame(update);
+    });
+  }
+
+  function animateBars(container: Element) {
+    container.querySelectorAll<HTMLElement>(".stat-bar-fill, .stat-bar-prev, .stat-severity-fill").forEach((el) => {
+      const width = el.dataset.width || "0";
+      el.style.width = `${width}%`;
+    });
+  }
+
+  function animateRing(container: Element) {
+    container.querySelectorAll<SVGCircleElement>(".ring-progress").forEach((circle) => {
+      const target = circle.dataset.target || "0";
+      circle.style.strokeDashoffset = target;
+    });
+  }
+
+  const statsObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          animateCounters(entry.target);
+          animateBars(entry.target);
+          animateRing(entry.target);
+          statsObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+
+  document.querySelectorAll(".stats-infographic").forEach((el) => {
+    statsObserver.observe(el);
+  });
+</script>

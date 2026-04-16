@@ -4,27 +4,37 @@ import { Mail } from "@lucide/astro";
 
 <footer class="bg-primary text-white">
   <div class="max-w-[1200px] mx-auto px-6 pt-16 pb-8">
-    <div class="flex flex-col md:flex-row justify-between items-start gap-8 mb-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+      <!-- Colonne A — Association -->
       <div>
         <h3 class="font-display font-black text-2xl text-white mb-2">
           Association Estelle & Thomas
         </h3>
-        <p class="text-white/80">Ensemble contre le harcèlement scolaire</p>
+        <p class="text-white/80 mb-4">Ensemble contre le harcèlement scolaire</p>
+        <p class="text-white/60 text-sm">RNA : W141005251</p>
+        <p class="text-white/60 text-sm">SIRET : 99422726200015</p>
       </div>
+
+      <!-- Colonne B — Plan du site -->
       <div>
         <h4 class="font-display font-semibold text-lg text-secondary mb-3">
-          Contactez-nous
+          Plan du site
         </h4>
-        <a
-          href="mailto:contact.assoestelleetthomas@gmail.com"
-          class="flex items-center gap-3 hover:text-secondary transition-colors"
-        >
-          <span class="w-10 h-10 rounded-full border-2 border-white/30 flex items-center justify-center">
-            <Mail class="w-5 h-5" />
-          </span>
-          <span class="font-semibold">contact.assoestelleetthomas@gmail.com</span>
-        </a>
-        <div class="flex items-center gap-3 mt-4">
+        <ul class="space-y-2">
+          <li><a href="/" class="text-white/80 hover:text-secondary transition-colors">Accueil</a></li>
+          <li><a href="/qui-sommes-nous" class="text-white/80 hover:text-secondary transition-colors">Qui sommes-nous</a></li>
+          <li><a href="/nos-actions" class="text-white/80 hover:text-secondary transition-colors">Nos actions</a></li>
+          <li><a href="/ressources" class="text-white/80 hover:text-secondary transition-colors">Ressources</a></li>
+          <li><a href="/contact" class="text-white/80 hover:text-secondary transition-colors">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Colonne C — Nous suivre -->
+      <div>
+        <h4 class="font-display font-semibold text-lg text-secondary mb-3">
+          Nous suivre
+        </h4>
+        <div class="flex items-center gap-3 mb-4">
           <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full border-2 border-white/30 flex items-center justify-center hover:text-secondary hover:border-secondary transition-colors" aria-label="Instagram">
             <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
@@ -38,7 +48,15 @@ import { Mail } from "@lucide/astro";
             </svg>
           </a>
         </div>
-        <p class="text-white/60 text-sm mt-3">RNA : W141005251</p>
+        <a
+          href="mailto:contact.assoestelleetthomas@gmail.com"
+          class="flex items-center gap-3 text-white/80 hover:text-secondary transition-colors"
+        >
+          <span class="w-10 h-10 rounded-full border-2 border-white/30 flex items-center justify-center">
+            <Mail class="w-5 h-5" />
+          </span>
+          <span class="text-sm">contact.assoestelleetthomas@gmail.com</span>
+        </a>
       </div>
     </div>
 

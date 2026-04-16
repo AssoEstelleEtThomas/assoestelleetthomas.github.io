@@ -7,15 +7,23 @@ interface Props {
 const { title, subtitle } = Astro.props;
 ---
 
-<section class="bg-gradient-to-br from-secondary to-secondary-light py-16 relative overflow-hidden" style="border-radius: 0 0 50% 50% / 0 0 4rem 4rem;">
+<section class="pt-16 pb-8 relative overflow-hidden">
   <div class="max-w-[1200px] mx-auto px-5 text-center">
-    <h1 class="font-display font-black text-4xl md:text-5xl text-white hero-animate-title">
+    <h1
+      class="font-display font-black text-4xl md:text-5xl text-accent hero-animate-title"
+    >
       {title}
     </h1>
-    {subtitle && (
-      <p class="font-display text-xl text-primary mt-4 hero-animate-subtitle">
-        {subtitle}
-      </p>
-    )}
+    {
+      subtitle && (
+        <p class="font-display text-xl text-primary mt-4 hero-animate-subtitle">
+          {subtitle}
+        </p>
+      )
+    }
+    <div
+      class="mx-auto mt-6 w-[30%] h-[4px] bg-accent rounded-full hero-animate-title"
+    >
+    </div>
   </div>
 </section>
