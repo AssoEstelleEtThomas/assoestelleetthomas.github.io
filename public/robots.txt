@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.estelle-thomas.fr/sitemap-index.xml

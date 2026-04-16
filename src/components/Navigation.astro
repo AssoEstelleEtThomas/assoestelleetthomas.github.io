@@ -1,0 +1,74 @@
+---
+import { Image } from "astro:assets";
+import logo from "../assets/images/logo.png";
+
+const links = [
+  { href: "#accueil", label: "Accueil" },
+  { href: "#a-propos", label: "À propos" },
+  { href: "#valeurs", label: "Nos Valeurs" },
+  { href: "#contact", label: "Contact" },
+];
+---
+
+<header class="bg-card/80 backdrop-blur-sm sticky top-0 z-50 shadow-sm">
+  <nav class="flex justify-between items-center w-full px-6 py-3 max-w-[1200px] mx-auto">
+    <a href="#accueil" class="flex items-center">
+      <Image
+        src={logo}
+        alt="Logo Association Estelle & Thomas"
+        height={60}
+        class="h-15 w-auto"
+      />
+    </a>
+
+    <!-- Desktop nav -->
+    <div class="hidden md:flex items-center gap-8">
+      {links.map(({ href, label }) => (
+        <a
+          href={href}
+          class="nav-link font-display font-semibold text-dark transition-colors duration-200 hover:text-accent"
+        >
+          {label}
+        </a>
+      ))}
+    </div>
+
+    <!-- Mobile hamburger -->
+    <button
+      id="mobile-menu-btn"
+      class="md:hidden text-text p-2"
+      aria-label="Ouvrir le menu"
+      aria-expanded="false"
+    >
+      <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-card border-t border-dark/10 pb-4">
+    <ul class="flex flex-col px-6 py-4 gap-3">
+      {links.map(({ href, label }) => (
+        <li>
+          <a
+            href={href}
+            class="font-display font-semibold text-lg py-2 text-text hover:text-accent transition-colors block"
+          >
+            {label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById("mobile-menu-btn");
+  const menu = document.getElementById("mobile-menu");
+  btn?.addEventListener("click", () => {
+    const isOpen = !menu?.classList.contains("hidden");
+    menu?.classList.toggle("hidden");
+    btn.setAttribute("aria-expanded", String(!isOpen));
+  });
+</script>
