@@ -1,18 +1,22 @@
 ---
 import { Image } from "astro:assets";
+import SocialIcons from "./SocialIcons.astro";
 import logo from "../assets/images/logo.png";
 
 const links = [
-  { href: "#accueil", label: "Accueil" },
-  { href: "#a-propos", label: "À propos" },
-  { href: "#valeurs", label: "Nos Valeurs" },
-  { href: "#contact", label: "Contact" },
+  { href: "/", label: "Accueil" },
+  { href: "/qui-sommes-nous", label: "Qui sommes-nous" },
+  { href: "/nos-actions", label: "Nos actions" },
+  { href: "/ressources", label: "Ressources" },
+  { href: "/contact", label: "Contact" },
 ];
+
+const currentPath = Astro.url.pathname;
 ---
 
 <header class="bg-card/80 backdrop-blur-sm sticky top-0 z-50 shadow-sm">
   <nav class="flex justify-between items-center w-full px-6 py-3 max-w-[1200px] mx-auto">
-    <a href="#accueil" class="flex items-center">
+    <a href="/" class="flex items-center">
       <Image
         src={logo}
         alt="Logo Association Estelle & Thomas"
@@ -26,11 +30,15 @@ const links = [
       {links.map(({ href, label }) => (
         <a
           href={href}
-          class="nav-link font-display font-semibold text-dark transition-colors duration-200 hover:text-accent"
+          class:list={[
+            "nav-link font-display font-semibold text-dark transition-colors duration-200 hover:text-accent",
+            { "nav-link-active": href === "/" ? currentPath === "/" : currentPath.startsWith(href) },
+          ]}
         >
           {label}
         </a>
       ))}
+      <SocialIcons class="flex items-center gap-3 ml-2 text-primary" />
     </div>
 
     <!-- Mobile hamburger -->
@@ -53,13 +61,19 @@ const links = [
         <li>
           <a
             href={href}
-            class="font-display font-semibold text-lg py-2 text-text hover:text-accent transition-colors block"
+            class:list={[
+              "font-display font-semibold text-lg py-2 text-text hover:text-accent transition-colors block",
+              { "text-accent": href === "/" ? currentPath === "/" : currentPath.startsWith(href) },
+            ]}
           >
             {label}
           </a>
         </li>
       ))}
     </ul>
+    <div class="px-6 pt-2 border-t border-dark/10">
+      <SocialIcons class="flex items-center gap-4 text-primary" />
+    </div>
   </div>
 </header>
 

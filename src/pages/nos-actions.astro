@@ -1,0 +1,81 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import ScrollReveal from "../components/ScrollReveal.astro";
+import { MessageCircle, Users, BookOpen } from "@lucide/astro";
+---
+
+<BaseLayout title="Nos actions" description="Découvrez les actions de l'Association Estelle & Thomas : groupes de parole, sensibilisation et ateliers thématiques.">
+  <PageHero
+    title="Nos actions"
+    subtitle="Agir concrètement contre le harcèlement scolaire"
+  />
+
+  <!-- Groupes de parole -->
+  <section class="bg-background py-24">
+    <div class="max-w-[1200px] mx-auto px-5">
+      <div class="flex flex-col lg:flex-row items-center gap-12 reveal">
+        <div class="flex-1">
+          <h2 class="font-display font-black text-3xl text-primary mb-6">Groupes de parole</h2>
+          <p class="text-text leading-relaxed mb-4">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </p>
+          <p class="text-text leading-relaxed">
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </div>
+        <div class="flex-1 flex justify-center">
+          <div class="w-full max-w-[400px] h-64 rounded-card bg-secondary/20 flex items-center justify-center">
+            <MessageCircle class="w-20 h-20 text-primary/30" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sensibilisation -->
+  <section class="bg-card py-24">
+    <div class="max-w-[1200px] mx-auto px-5">
+      <div class="flex flex-col lg:flex-row-reverse items-center gap-12 reveal">
+        <div class="flex-1">
+          <h2 class="font-display font-black text-3xl text-primary mb-6">Sensibilisation</h2>
+          <p class="text-text leading-relaxed mb-4">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet.
+          </p>
+          <p class="text-text leading-relaxed">
+            Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Maecenas faucibus mollis interdum. Nullam quis risus eget urna mollis ornare vel eu leo.
+          </p>
+        </div>
+        <div class="flex-1 flex justify-center">
+          <div class="w-full max-w-[400px] h-64 rounded-card bg-accent/10 flex items-center justify-center">
+            <Users class="w-20 h-20 text-accent/30" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ateliers thématiques -->
+  <section class="bg-background py-24">
+    <div class="max-w-[1200px] mx-auto px-5">
+      <div class="flex flex-col lg:flex-row items-center gap-12 reveal">
+        <div class="flex-1">
+          <h2 class="font-display font-black text-3xl text-primary mb-6">Ateliers thématiques</h2>
+          <p class="text-text leading-relaxed mb-4">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.
+          </p>
+          <p class="text-text leading-relaxed">
+            Fusce neque. Suspendisse faucibus, nunc et pellentesque egestas, lacus ante convallis tellus, vitae iaculis lacus elit id tortor. Vivamus aliquet elit ac nisl.
+          </p>
+        </div>
+        <div class="flex-1 flex justify-center">
+          <div class="w-full max-w-[400px] h-64 rounded-card bg-dark/10 flex items-center justify-center">
+            <BookOpen class="w-20 h-20 text-dark/30" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<ScrollReveal />

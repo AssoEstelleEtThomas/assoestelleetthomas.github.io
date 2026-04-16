@@ -1,0 +1,20 @@
+---
+import { User } from "@lucide/astro";
+
+interface Props {
+  name: string;
+  role: string;
+  description: string;
+}
+
+const { name, role, description } = Astro.props;
+---
+
+<div class="card-hover p-8 rounded-card border border-black/5 bg-card text-center">
+  <div class="w-28 h-28 rounded-full bg-secondary/20 flex items-center justify-center mx-auto mb-6">
+    <User class="w-12 h-12 text-primary/40" />
+  </div>
+  <h3 class="font-display font-black text-xl text-primary mb-1">{name}</h3>
+  <p class="text-accent font-display font-semibold text-sm mb-4">{role}</p>
+  <p class="text-text/80 text-sm">{description}</p>
+</div>

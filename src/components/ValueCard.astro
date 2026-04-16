@@ -1,0 +1,14 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  bgClass?: string;
+}
+
+const { title, description, bgClass = "bg-secondary/10" } = Astro.props;
+---
+
+<div class={`card-hover p-10 rounded-card text-center border border-black/5 ${bgClass}`}>
+  <h3 class="font-display font-black text-2xl text-primary mb-4">{title}</h3>
+  <p class="text-text font-semibold">{description}</p>
+</div>

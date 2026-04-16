@@ -1,0 +1,115 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import ScrollReveal from "../components/ScrollReveal.astro";
+import { Podcast, ExternalLink } from "@lucide/astro";
+---
+
+<BaseLayout title="Ressources" description="Podcasts, réseaux sociaux et articles autour du harcèlement scolaire — les ressources de l'Association Estelle & Thomas.">
+  <PageHero
+    title="Ressources"
+    subtitle="S'informer et comprendre pour mieux agir"
+  />
+
+  <!-- Podcast -->
+  <section class="bg-background py-24">
+    <div class="max-w-[1200px] mx-auto px-5">
+      <SectionHeading
+        title="Podcast"
+        subtitle="Écoutez nos échanges sur le harcèlement scolaire."
+      />
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 stagger-children">
+        <div class="card-hover p-8 rounded-card border border-black/5 bg-card">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center">
+              <Podcast class="w-6 h-6 text-accent" />
+            </div>
+            <div>
+              <h3 class="font-display font-bold text-primary">Lorem Ipsum Dolor</h3>
+              <p class="text-text/60 text-sm">Épisode 1 — 15 min</p>
+            </div>
+          </div>
+          <p class="text-text/80 text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        <div class="card-hover p-8 rounded-card border border-black/5 bg-card">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center">
+              <Podcast class="w-6 h-6 text-accent" />
+            </div>
+            <div>
+              <h3 class="font-display font-bold text-primary">Amet Consectetur</h3>
+              <p class="text-text/60 text-sm">Épisode 2 — 22 min</p>
+            </div>
+          </div>
+          <p class="text-text/80 text-sm">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social media -->
+  <section class="bg-card py-24">
+    <div class="max-w-[1200px] mx-auto px-5">
+      <SectionHeading
+        title="Réseaux sociaux"
+        subtitle="Suivez-nous pour rester informé de nos actions."
+      />
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[600px] mx-auto stagger-children">
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="card-hover p-8 rounded-card border border-black/5 bg-background flex items-center gap-4 group">
+          <div class="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center">
+            <svg class="w-7 h-7 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" x2="17.51" y1="6.5" y2="6.5" /></svg>
+          </div>
+          <div>
+            <h3 class="font-display font-bold text-primary group-hover:text-accent transition-colors">Instagram</h3>
+            <p class="text-text/60 text-sm">@estelleetthomas</p>
+          </div>
+        </a>
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="card-hover p-8 rounded-card border border-black/5 bg-background flex items-center gap-4 group">
+          <div class="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center">
+            <svg class="w-7 h-7 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
+          </div>
+          <div>
+            <h3 class="font-display font-bold text-primary group-hover:text-accent transition-colors">Facebook</h3>
+            <p class="text-text/60 text-sm">Association Estelle & Thomas</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Articles -->
+  <section class="bg-background py-24">
+    <div class="max-w-[1200px] mx-auto px-5">
+      <SectionHeading
+        title="Articles"
+        subtitle="Lectures et ressources pour approfondir le sujet."
+      />
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 stagger-children">
+        <div class="card-hover p-8 rounded-card border border-black/5 bg-card">
+          <h3 class="font-display font-bold text-primary mb-3">Lorem ipsum dolor sit amet</h3>
+          <p class="text-text/80 text-sm mb-4">Consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <a href="#" class="inline-flex items-center gap-2 text-accent font-display font-semibold text-sm hover:underline">
+            Lire la suite <ExternalLink class="w-4 h-4" />
+          </a>
+        </div>
+        <div class="card-hover p-8 rounded-card border border-black/5 bg-card">
+          <h3 class="font-display font-bold text-primary mb-3">Ut enim ad minim veniam</h3>
+          <p class="text-text/80 text-sm mb-4">Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <a href="#" class="inline-flex items-center gap-2 text-accent font-display font-semibold text-sm hover:underline">
+            Lire la suite <ExternalLink class="w-4 h-4" />
+          </a>
+        </div>
+        <div class="card-hover p-8 rounded-card border border-black/5 bg-card">
+          <h3 class="font-display font-bold text-primary mb-3">Duis aute irure dolor</h3>
+          <p class="text-text/80 text-sm mb-4">In reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+          <a href="#" class="inline-flex items-center gap-2 text-accent font-display font-semibold text-sm hover:underline">
+            Lire la suite <ExternalLink class="w-4 h-4" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<ScrollReveal />
