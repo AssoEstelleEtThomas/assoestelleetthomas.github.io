@@ -2,10 +2,13 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PageHero from "../components/PageHero.astro";
 import ScrollReveal from "../components/ScrollReveal.astro";
-import { MessageCircle, Users, BookOpen } from "@lucide/astro";
+import { MessageCircle, Users, BookOpen, ClipboardList } from "@lucide/astro";
 ---
 
 <BaseLayout title="Nos actions" description="Découvrez les actions de l'Association Estelle & Thomas : groupes de parole, sensibilisation et ateliers thématiques.">
+  <!-- Script Tally (popup) — chargé dans le <head> via le slot du layout -->
+  <script is:inline slot="head" async src="https://tally.so/widgets/embed.js"></script>
+
   <PageHero
     title="Nos actions"
     subtitle="Agir concrètement contre le harcèlement scolaire"
@@ -23,6 +26,20 @@ import { MessageCircle, Users, BookOpen } from "@lucide/astro";
           <p class="text-text leading-relaxed">
             Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
           </p>
+          <p class="text-text leading-relaxed mt-6 font-semibold">
+            Aidez-nous à créer ce groupe de parole : partagez vos attentes en quelques minutes. Questionnaire anonyme.
+          </p>
+          <button
+            type="button"
+            data-tally-open="ODg4P8"
+            data-tally-layout="modal"
+            data-tally-width="700"
+            data-tally-overlay="1"
+            class="inline-flex items-center gap-2 mt-6 px-8 py-4 rounded-pill bg-accent text-white font-display font-bold shadow-lg shadow-accent/30 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-accent/40 transition-all cursor-pointer"
+          >
+            <ClipboardList class="w-5 h-5" />
+            Remplir le questionnaire
+          </button>
         </div>
         <div class="flex-1 flex justify-center">
           <div class="w-full max-w-[400px] h-64 rounded-card bg-secondary/20 flex items-center justify-center">
