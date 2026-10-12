@@ -3,7 +3,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import PageHero from "../components/PageHero.astro";
 import SectionHeading from "../components/SectionHeading.astro";
 import ScrollReveal from "../components/ScrollReveal.astro";
-import { Podcast, ExternalLink } from "@lucide/astro";
+import { Image } from "astro:assets";
+import { Podcast, ExternalLink, CalendarDays, Clock, MapPin } from "@lucide/astro";
+import afficheSoireeLancement from "../assets/images/evenements/soiree-lancement.jpg";
+
+// Hidden until real content is available
+const showPodcast = false;
+const showArticles = false;
 ---
 
 <BaseLayout title="Ressources" description="Podcasts, réseaux sociaux et articles autour du harcèlement scolaire — les ressources de l'Association Estelle & Thomas.">
@@ -12,6 +18,50 @@ import { Podcast, ExternalLink } from "@lucide/astro";
     subtitle="S'informer et comprendre pour mieux agir"
   />
 
+  <!-- Events -->
+  <section id="evenements" class="bg-background py-24 scroll-mt-24">
+    <div class="max-w-[1200px] mx-auto px-5">
+      <SectionHeading
+        title="Événements"
+        subtitle="Venez nous rencontrer lors de nos prochains rendez-vous."
+      />
+      <div class="reveal max-w-[900px] mx-auto rounded-card border border-black/5 bg-card overflow-hidden flex flex-col md:flex-row">
+        <a href={afficheSoireeLancement.src} target="_blank" rel="noopener noreferrer" class="md:w-2/5 shrink-0" aria-label="Voir l'affiche de la soirée de lancement en grand">
+          <Image
+            src={afficheSoireeLancement}
+            alt="Affiche de la soirée de lancement de l'association Estelle & Thomas, vendredi 6 novembre 2026 à 18h30, salle de l'amicale à Tilly-sur-Seulles"
+            width={720}
+            class="w-full h-full object-cover"
+          />
+        </a>
+        <div class="p-8 md:p-10 flex flex-col justify-center">
+          <span class="self-start bg-accent/10 text-accent font-display font-semibold text-xs uppercase tracking-wide px-3 py-1 rounded-full mb-4">
+            Ouverte à tous
+          </span>
+          <h3 class="font-display font-black text-2xl text-primary mb-6">Soirée de lancement</h3>
+          <ul class="space-y-3 text-text mb-6">
+            <li class="flex items-center gap-3">
+              <CalendarDays class="w-5 h-5 text-accent shrink-0" />
+              Vendredi 6 novembre 2026
+            </li>
+            <li class="flex items-center gap-3">
+              <Clock class="w-5 h-5 text-accent shrink-0" />
+              18h30
+            </li>
+            <li class="flex items-center gap-3">
+              <MapPin class="w-5 h-5 text-accent shrink-0" />
+              Salle de l'amicale, Tilly-sur-Seulles
+            </li>
+          </ul>
+          <a href="https://www.facebook.com/events/1105801351855584/" target="_blank" rel="noopener noreferrer" class="self-start inline-flex items-center gap-2 text-accent font-display font-semibold text-sm hover:underline">
+            Voir l'événement sur Facebook <ExternalLink class="w-4 h-4" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {showPodcast && (
   <!-- Podcast -->
   <section class="bg-background py-24">
     <div class="max-w-[1200px] mx-auto px-5">
@@ -47,6 +97,7 @@ import { Podcast, ExternalLink } from "@lucide/astro";
       </div>
     </div>
   </section>
+  )}
 
   <!-- Social media -->
   <section class="bg-card py-24">
@@ -62,7 +113,7 @@ import { Podcast, ExternalLink } from "@lucide/astro";
           </div>
           <div>
             <h3 class="font-display font-bold text-primary group-hover:text-accent transition-colors">Instagram</h3>
-            <p class="text-text/60 text-sm">@estelleetthomas</p>
+            <p class="text-text/60 text-sm">@estelle_thomas_</p>
           </div>
         </a>
         <a href="https://www.facebook.com/people/Estelle-et-Thomas-contre-le-harc%C3%A8lement-scolaire/61579563773547/" target="_blank" rel="noopener noreferrer" class="card-hover p-8 rounded-card border border-black/5 bg-background flex items-center gap-4 group">
@@ -78,6 +129,7 @@ import { Podcast, ExternalLink } from "@lucide/astro";
     </div>
   </section>
 
+  {showArticles && (
   <!-- Articles -->
   <section class="bg-background py-24">
     <div class="max-w-[1200px] mx-auto px-5">
@@ -110,6 +162,7 @@ import { Podcast, ExternalLink } from "@lucide/astro";
       </div>
     </div>
   </section>
+  )}
 </BaseLayout>
 
 <ScrollReveal />
