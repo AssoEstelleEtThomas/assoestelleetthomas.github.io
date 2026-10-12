@@ -2,7 +2,11 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PageHero from "../components/PageHero.astro";
 import ScrollReveal from "../components/ScrollReveal.astro";
-import { MessageCircle, Users, BookOpen, ClipboardList } from "@lucide/astro";
+import { Image } from "astro:assets";
+import { ClipboardList } from "@lucide/astro";
+import groupesDeParole from "../assets/images/actions/groupes-de-parole.png";
+import sensibilisation from "../assets/images/actions/sensibilisation.png";
+import ateliersThematiques from "../assets/images/actions/ateliers-thematiques.png";
 ---
 
 <BaseLayout title="Nos actions" description="Découvrez les actions de l'Association Estelle & Thomas : groupes de parole, sensibilisation et ateliers thématiques.">
@@ -45,9 +49,12 @@ import { MessageCircle, Users, BookOpen, ClipboardList } from "@lucide/astro";
           </button>
         </div>
         <div class="flex-1 flex justify-center">
-          <div class="w-full max-w-[400px] h-64 rounded-card bg-secondary/20 flex items-center justify-center">
-            <MessageCircle class="w-20 h-20 text-primary/30" />
-          </div>
+          <Image
+            src={groupesDeParole}
+            alt="Illustration : parents et enfants assis en cercle, partageant et s'écoutant avec bienveillance"
+            width={1040}
+            class="w-full max-w-[520px] h-auto rounded-card shadow-sm"
+          />
         </div>
       </div>
     </div>
@@ -67,9 +74,12 @@ import { MessageCircle, Users, BookOpen, ClipboardList } from "@lucide/astro";
           </p>
         </div>
         <div class="flex-1 flex justify-center">
-          <div class="w-full max-w-[400px] h-64 rounded-card bg-accent/10 flex items-center justify-center">
-            <Users class="w-20 h-20 text-accent/30" />
-          </div>
+          <Image
+            src={sensibilisation}
+            alt="Illustration : une intervenante sensibilise une classe d'élèves attentifs qui lèvent la main"
+            width={1040}
+            class="w-full max-w-[520px] h-auto rounded-card shadow-sm"
+          />
         </div>
       </div>
     </div>
@@ -89,9 +99,12 @@ import { MessageCircle, Users, BookOpen, ClipboardList } from "@lucide/astro";
           </p>
         </div>
         <div class="flex-1 flex justify-center">
-          <div class="w-full max-w-[400px] h-64 rounded-card bg-dark/10 flex items-center justify-center">
-            <BookOpen class="w-20 h-20 text-dark/30" />
-          </div>
+          <Image
+            src={ateliersThematiques}
+            alt="Illustration : enfants et adultes autour d'une table lors d'un atelier créatif sur les émotions"
+            width={1040}
+            class="w-full max-w-[520px] h-auto rounded-card shadow-sm"
+          />
         </div>
       </div>
     </div>
