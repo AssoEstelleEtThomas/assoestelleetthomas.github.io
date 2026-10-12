@@ -4,7 +4,10 @@ import PageHero from "../components/PageHero.astro";
 import SectionHeading from "../components/SectionHeading.astro";
 import PersonCard from "../components/PersonCard.astro";
 import ScrollReveal from "../components/ScrollReveal.astro";
-import { User } from "@lucide/astro";
+import { Image } from "astro:assets";
+import estelle from "../assets/images/estelle.jpg";
+import helene from "../assets/images/helene.jpg";
+import nicolas from "../assets/images/nicolas.jpg";
 ---
 
 <BaseLayout
@@ -20,11 +23,13 @@ import { User } from "@lucide/astro";
   <section class="bg-background py-24">
     <div class="max-w-[1200px] mx-auto px-5">
       <div class="flex flex-col lg:flex-row items-center gap-12 reveal">
-        <div
-          class="w-64 h-64 rounded-card bg-secondary/20 flex items-center justify-center shrink-0"
-        >
-          <User class="w-20 h-20 text-primary/30" />
-        </div>
+        <Image
+          src={estelle}
+          alt="Estelle Masson, présidente de l'association"
+          width={512}
+          height={512}
+          class="w-64 h-64 rounded-card object-cover shrink-0"
+        />
         <div>
           <h2 class="font-display font-black text-3xl text-primary mb-2">
             Estelle Masson
@@ -61,19 +66,20 @@ import { User } from "@lucide/astro";
       />
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 stagger-children">
         <PersonCard
-          name="Lorem Ipsum"
-          role="Bénévole"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          name="Hélène"
+          role="Maman bénévole"
+          description="Maman de deux ados, dont l'une a vécu le harcèlement scolaire, investie et volontaire dans la lutte contre ce fléau."
+          image={helene}
         />
         <PersonCard
-          name="Dolor Sit"
-          role="Bénévole"
-          description="Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          name="Nicolas"
+          role="Trésorier de l'association"
+          description="Couteau suisse de la gestion, chef d'entreprises, bâtisseur, fédérateur, orateur, auteur, explorateur et secrétaire trésorier de l'association. Avec lui, vos dons seront bien distribués."
+          image={nicolas}
         />
         <PersonCard
-          name="Amet Consectetur"
-          role="Bénévole"
-          description="Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+          name="Laure"
+          role="Graphiste et secrétaire"
         />
       </div>
     </div>

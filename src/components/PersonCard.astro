@@ -1,20 +1,33 @@
 ---
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
 import { User } from "@lucide/astro";
 
 interface Props {
   name: string;
   role: string;
-  description: string;
+  description?: string;
+  image?: ImageMetadata;
 }
 
-const { name, role, description } = Astro.props;
+const { name, role, description, image } = Astro.props;
 ---
 
 <div class="card-hover p-8 rounded-card border border-black/5 bg-card text-center">
-  <div class="w-28 h-28 rounded-full bg-secondary/20 flex items-center justify-center mx-auto mb-6">
-    <User class="w-12 h-12 text-primary/40" />
-  </div>
+  {image ? (
+    <Image
+      src={image}
+      alt={name}
+      width={224}
+      height={224}
+      class="w-28 h-28 rounded-full object-cover mx-auto mb-6"
+    />
+  ) : (
+    <div class="w-28 h-28 rounded-full bg-secondary/20 flex items-center justify-center mx-auto mb-6">
+      <User class="w-12 h-12 text-primary/40" />
+    </div>
+  )}
   <h3 class="font-display font-black text-xl text-primary mb-1">{name}</h3>
   <p class="text-accent font-display font-semibold text-sm mb-4">{role}</p>
-  <p class="text-text/80 text-sm">{description}</p>
+  {description && <p class="text-text/80 text-sm">{description}</p>}
 </div>
