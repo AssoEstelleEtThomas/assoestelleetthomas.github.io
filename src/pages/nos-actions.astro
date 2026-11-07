@@ -3,7 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import PageHero from "../components/PageHero.astro";
 import ScrollReveal from "../components/ScrollReveal.astro";
 import { Image } from "astro:assets";
-import { ClipboardList } from "@lucide/astro";
+import { ClipboardList, Heart } from "@lucide/astro";
 import groupesDeParole from "../assets/images/actions/groupes-de-parole.png";
 import sensibilisation from "../assets/images/actions/sensibilisation.png";
 import ateliersThematiques from "../assets/images/actions/ateliers-thematiques.png";
@@ -107,6 +107,28 @@ import ateliersThematiques from "../assets/images/actions/ateliers-thematiques.p
           />
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Donation call to action -->
+  <section class="bg-card py-24">
+    <div class="max-w-[800px] mx-auto px-5 text-center reveal">
+      <h2 class="font-display font-black text-3xl text-primary mb-6">Soutenez nos actions</h2>
+      <p class="text-text leading-relaxed mb-4">
+        Groupes de parole, interventions dans les écoles, ateliers : toutes nos actions reposent sur l'engagement de nos bénévoles et sur votre générosité.
+      </p>
+      <p class="text-text leading-relaxed">
+        Chaque don, quel que soit son montant, aide un enfant ou une famille à sortir de l'isolement.
+      </p>
+      <a
+        href="https://www.helloasso.com/associations/estelle-et-thomas-contre-le-harcelement-scolaire/formulaires/1"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 mt-8 px-8 py-4 rounded-pill bg-accent text-white font-display font-bold shadow-lg shadow-accent/30 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-accent/40 transition-all"
+      >
+        <Heart class="w-5 h-5" />
+        Faire un don
+      </a>
     </div>
   </section>
 </BaseLayout>
